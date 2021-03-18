@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> 
+    </head>
+    
+    <body>
+        <div class="outer_list">
+            {% for x in num_element_lista %}
+            <div class="single_list_item">
+                {{x}}
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
