@@ -6,6 +6,6 @@ from flask import render_template
 
 @app.route('/')
 def hello():
-    return render_template('index.html', num_element_lista = range(10))
+    return render_template('index.html', num_element_lista = range(50))
 
 
