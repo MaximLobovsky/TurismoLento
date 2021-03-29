@@ -6,6 +6,21 @@
     </head>
     <body>
         <p>hello</p>
+        
+        <form action="/calculus" method="POST">
+          <label>
+            Mia stringa:
+            <input type="text" name="mia_stringa">
+          </label>
+
+          <label>
+            Submitta!
+            <input type="submit" name="submit_button">
+          </label>
+        </form>
+
+
+
         <div class="outer_list">
             {% for x in num_element_lista %}
                 <div class="single_list_item" 
@@ -19,9 +34,11 @@
                     <audio id="sound_wew_{{x}}">
                         <source src="{{url_for('static', filename='wew.mp3')}}" type="audio/mpeg">
                     </audio>
-                    {{x}}
+                    Locazione Turistica {{x}}
+
                 </div>
             {% endfor %}
         </div>
     </body>
 </html>
+
