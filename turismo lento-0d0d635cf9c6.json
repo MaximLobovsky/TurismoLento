@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "turismo-lento",
+  "private_key_id": "0d0d635cf9c61cc675ef313d9811da099f7ec72a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDrkpLfcpK6Ar+U\nwnO4u8zIO1ClxPmniYpjkizisaGnqrRL1lLORAT8b46hmitWnm/wlP1XakR0EUpn\nbO6gJQNayl1UZgaUB3csoWBHpdJZtv+60acHMdI6peULBXpcSWzDsc2sbJmXujuh\ngC48gPqER8y4JVgUJT14JKskxENMNk9srQCK4eNXuEN1oHPOpuZtFRNOpa3Xd8Kb\ncAqfqWymMdBiBwrB+uDCPiuLnEaISzJH4HTJwZNCfS2yTJg8T8KyL1gVS6YJhkSf\nayEU6l/qCI1fpWvdZR6RKCMPQCBulRhiKT3GbsQuDvWmlRkdL24U0eFipFFfiPoC\n27HyZ8mpAgMBAAECggEABS45wya4odUWI/4bv+QHZp7hUOfySpQsgjCQgqK/6JlJ\nMkLCGu2lg2yroROsINFGqm6IXMAGRdwse/ZKECUIPBqnr0e4HNDGNunMnX7Az77F\nxHTAXNjkY+xKi3HBJV7rAKm8GW7g+NR8Y7qXKbb3a2nNz33owDaqcaYyylHzne0o\nBrcV+wPdeqPwdd2u6evIDlBd3pVErWXMhHGmsxtEUl3BFjJ5te/Zl0l/Fviw3pSI\np5rXBxfi23+p4mvtkGaOMzE15FNc6KFta+BQwJmCw8eYw43DAD94wXB6ipNeTV/2\nw6wg1TowRL9so0KEaJBwr9WzUvOSFxKBzfm6SOz4JQKBgQD+RMkjtycJSg1h9Gn3\n1KozDxePf15+4DbyLFRu8J/sflvUSHlDKB+awinD4hfS60iph8mYfq9im+zw+yyd\nrsxWGPm+s5K3wxiR/e/RmR3JpjhOPcg2uxwD4d8sLo87YO2Ho1OgF5g9THNbB3nx\nMDaoH0HKU2sqi1NgyicAQPDf5QKBgQDtLTLqLOFDj5G6ryW87H9YznvzRwQsUQBw\n1FLHd3Jma8NudCF9dW7US/+OWG1Bbk/kVchTzSa23Z99ONLNxxYq94scJpKn2TgX\nM1t+NrOFj6ORCNCKyotbcb3BW+OVY+6tzp4bjhAIg27c+cFhukmAxTmPJoK5kKaW\nyEOt5Dg+dQKBgQC+4YaaMFG20IfRZHn02grXf9nxGO4ok0vMa+kKy8tS790iNTIL\nb2CifmZ6Lg4ygf0vf8egmmIxxdqPYhAxY9r0O5WpSwe2uliEqLzTfX32NrmISys1\noyu54mP2uBFAw1gt/je2NGBOjEkBKlCp9sbhWW27ZPpLmwKB4+B5eUca3QKBgDMr\nLC/fbN4BjGQlQ1QGBddn/M/Yg2r4Mssk05MbDwBPwYMD5PHHMxj0KHdSVofmP7A4\nXZbOzMpo9+6xIrGogPzWGRoCrGMv9uzydIu/S23GNnik2TEIT5Zz7IdZxrjFLYor\n6GpzdLwRdwqPi4wE/7SbWDatDUjxjy86l3ddpFC9AoGAcW4X/sT778aLr+sS45Ks\n6mAykvfGKl2ZOTNAPha3EPcwUx8FE9TXkCIwZldvSOnFOzI6/jIOMXHDpzyt/h1m\ny39Q6ko7sXZAf5iqFRpWZf1siKAdK6WGMMyrUdgreKPOARWI1moDC1BzXWksSjX7\nY2ztKU+L8CJqXfirtr4JjR4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "user-71@turismo-lento.iam.gserviceaccount.com",
+  "client_id": "113049618643631377410",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/user-71%40turismo-lento.iam.gserviceaccount.com"
+}
