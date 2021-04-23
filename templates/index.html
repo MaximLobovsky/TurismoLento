@@ -22,9 +22,10 @@
 
 
         <div class="outer_list">
+            {% set count = namespace(value=1) %}
             {% for x in num_element_lista %}
                 <div class="single_list_item" 
-                     id="single_list_item_{{x}}" 
+                     id="single_list_item_{{x}}"
                      onmouseover="play_sound('sound_tiup_{{x}}')"
                      onmousedown="play_sound('sound_wew_{{x}}')" >
 
@@ -34,9 +35,11 @@
                     <audio id="sound_wew_{{x}}">
                         <source src="{{url_for('static', filename='wew.mp3')}}" type="audio/mpeg">
                     </audio>
-                    Locazione Turistica {{x}}
+
+                    Località {{data[count.value][1]}}
 
                 </div>
+                {% set count.value = count.value + 1 %}
             {% endfor %}
         </div>
     </body>

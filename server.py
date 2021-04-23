@@ -4,7 +4,7 @@ from flask import render_template
 import gspread
 # Service client credential from oauth2client
 from oauth2client.service_account import ServiceAccountCredentials
-import pprint
+import json
 
 def get_sheet_values():
     # Create scope
@@ -26,9 +26,10 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     elements = get_sheet_values()
-    pprint.pprint(elements)
+    # with open('test.json', 'w') as f:
+    #     json.dump(elements, f, indent=4)
 
-    return render_template('index.html', num_element_lista=range(50))
+    return render_template('index.html', num_element_lista=range(len(elements) - 1), data=elements)
 
 
 @app.route('/calculus', methods=['post'])
