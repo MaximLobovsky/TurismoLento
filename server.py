@@ -1,3 +1,6 @@
+'flask è un framework, ti dà una serie di strumenti basilari per risolvere problemi già risolti da altri.'
+'jinja2 è un linguaggio di templating'
+
 from flask import request
 from flask import Flask
 app = Flask(__name__)
@@ -7,13 +10,14 @@ from flask import render_template
 
 @app.route('/')
 def hello():
-    return render_template('index.html', num_element_lista = range(50))
+    return render_template('index.html', num_element_lista = range(53))
 
 @app.route('/calculus', methods=['post'])
 def recive_string():
     myString = request.form['mia_stringa']
     half=len(myString)//2
     return myString[0:half]
+
 
 
 if __name__ == "__main__":
