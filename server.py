@@ -4,7 +4,7 @@ from flask import render_template
 import gspread
 # Service client credential from oauth2client
 from oauth2client.service_account import ServiceAccountCredentials
-
+import pprint
 
 def get_sheet_values():
     # Create scope
@@ -25,6 +25,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
+    elements = get_sheet_values()
+    pprint.pprint(elements)
+
     return render_template('index.html', num_element_lista=range(50))
 
 
@@ -36,5 +39,4 @@ def recive_string():
 
 
 if __name__ == "__main__":
-    elements = get_sheet_values()
     app.run(host='127.0.0.1', port=1234, debug=True)
