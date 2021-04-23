@@ -1,0 +1,6 @@
+# questo file mi permette di scaricare tutti i requisiti in una botta.
+# pip install -r .\requirements.txt
+
+flask
+gspread
+oauth2client
