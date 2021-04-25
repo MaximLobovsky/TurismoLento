@@ -7,7 +7,44 @@
 {% block content %}
     <div class="row">
       <div class="col-sm-3" style="background-color: blueviolet;">
-        porzione dedicata alla ricerca
+        Trova una località:
+
+        <input type="text" id="barra-ricerca" onkeyup="ricerca('barra-ricerca', 'outer_list')" placeholder="Cerca un nome">
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="enable_regione_search">
+          <label class="form-check-label" for="enable_regione_search">
+            Nella regione di:
+
+            <select class="form-select" aria-label="Default select example">
+              {% for regione in regioni %}
+                <option value="{{regione}}">{{regione}}</option>
+              {% endfor %}
+            </select>
+
+          </label>
+        </div>
+
+        <div class="outer_list" id="list_container">
+            {% for localita in data %}
+                <div class="single_list_item" 
+                     id="single_list_item_{{localita.id}}"
+                     onmouseover="play_sound('sound_tiup_{{localita.id}}')"
+                     onmousedown="play_sound('sound_wew_{{localita.id}}')" >
+
+                    <audio id="sound_tiup_{{localita.id}}">
+                        <source src="{{url_for('static', filename='tiup.mp3')}}" type="audio/mpeg">
+                    </audio>
+                    <audio id="sound_wew_{{localita.id}}">
+                        <source src="{{url_for('static', filename='wew.mp3')}}" type="audio/mpeg">
+                    </audio>
+                    {{localita.nome}}
+
+                </div>
+            {% endfor %}
+        </div>
+
+
       </div>
       <div class="col-sm-9" style="background-color: rgb(161, 148, 173);">
         porzione dedicata alla presentazione delle località

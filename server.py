@@ -8,7 +8,7 @@ import gspread
 # Service client credential from oauth2client
 from oauth2client.service_account import ServiceAccountCredentials
 import json
-
+from collections import namedtuple
 
 def get_sheet_values():
     # Create scope
@@ -26,15 +26,30 @@ def get_sheet_values():
 # create the flask application
 app = Flask(__name__)
 
+def get_lista_località():
+    lista = get_sheet_values()
+    #Localita con la maiuscola è la classe (si in python si può assegnare una classe con =)
+    Localita = namedtuple('localita', lista[0])
+    #localita con la minuscola è un istanza della classe 
+
+    #map è una funzione che prende due parametri, la prima è una funzione, la seconda è una lista. Esegue quella funzione su ogni lista e la restituisce modificata. 
+    # localita è una lista di classi che hanno come attributi i campi della riga 0
+    localita = map(lambda l: Localita(*l), lista[1:])
+    return list(localita)
+
+
+def get_nomi_regioni(listona):
+    regioni = map(lambda l: l.regione, listona)
+    return set(regioni)
+
 
 @app.route('/')
 def hello():
 
-    elements = get_sheet_values()
-    # with open('test.json', 'w') as f:
-    #     json.dump(elements, f, indent=4)
-
-    return render_template('localita.html', num_element_lista=range(len(elements) - 1), data=elements)
+    elements = get_lista_località()
+    regioni = get_nomi_regioni(elements)
+    print(elements)
+    return render_template('localita.html', data=elements, regioni=regioni)
 
 
 @app.route('/calculus', methods=['post'])
@@ -46,3 +61,4 @@ def recive_string():
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=1234, debug=True)
+
