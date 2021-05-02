@@ -46,11 +46,25 @@ def get_nomi_regioni(listona):
     return set(regioni)
 
 
+def get_coordinate(listona):
+    # creo una lista di località, e per ciascuna è presente una lista delle due coordinate (x, y)
+    # se no è presente la coordinata (non trovata) allora metto 'no'
+    coordinates = []
+    for place in listona:
+        if ' ' in place.coordinate:
+            single_coord = [float(place.coordinate.split()[0]), float(place.coordinate.split()[1])]
+        else:
+            single_coord = 'no'
+        coordinates.append(single_coord)
+    return coordinates
+
+
 @app.route('/')
 def hello():
     elements = get_lista_localita()
     regioni = get_nomi_regioni(elements)
-    print(elements)
+    coords = get_coordinate(elements)
+    print(coords)
     return render_template('localita.html', data=elements, regioni=regioni)
 
 
