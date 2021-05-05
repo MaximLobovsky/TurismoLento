@@ -59,12 +59,8 @@ def get_coordinate(listona):
 
 
 @app.route('/')
-def hello():
-    # elements = get_lista_localita()
-    # regioni = get_nomi_regioni(elements)
-    # coords = get_coordinate(elements)
-    # print(coords)
-    return render_template('index.html')
+def index():
+    return render_template('Map.html')
 
 
 @app.route('/Home.html')

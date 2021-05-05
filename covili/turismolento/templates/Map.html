@@ -11,9 +11,14 @@
 <link rel="stylesheet" href="../static/Map.css" media="screen">
     <script class="u-script" type="text/javascript" src="../static/jquery-1.9.1.min.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../static/nicepage.js" defer=""></script>
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="../static/favicon.ico">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -56,13 +61,18 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Gallery.html" style="padding: 10px 20px;">Gallery</a>
 </li></ul>
               </div>
-            </div>
+            </div>s
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav>
       </div></header>
     <section class="u-clearfix u-section-1" id="sec-531e">
-      <div class="u-clearfix u-sheet u-sheet-1"></div>
+      <div id= "map"></div>
+        <script src="../static/place_marker.js"></script>
+        <script>
+          my_map = CreateMap();
+          PlaceMarker(my_map, 0, 0, 'test')
+        </script>
     </section>
     
     
