@@ -2,7 +2,7 @@
 <html style="font-size: 16px;" lang="it-IT">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
@@ -67,11 +67,26 @@
         </nav>
       </div></header>
     <section class="u-clearfix u-section-1" id="sec-531e">
-      <div id= "map"></div>
+      <div class = "u-clearfix u-sheet"><div id = "map"></div></div>
         <script src="../static/place_marker.js"></script>
         <script>
-          my_map = CreateMap();
-          PlaceMarker(my_map, 0, 0, 'test')
+            let my_map;
+            let descriptions = [];
+            {%for item in descs%}
+                {% set result = item.decode("utf-8")%}
+                descriptions.push("{{result}}")
+            {% endfor %}
+            let coordinates = {{coords}};
+            my_map = CreateMap();
+            let element;
+            let counter = 0;
+            for (element of coordinates){
+                if(element[0] != 0 && element[1] != 0) {
+                    PlaceMarker(my_map, element[0], element[1], descriptions[counter]);
+                    counter += 1;
+                }
+            }
+            my_map.setView([41.902480, 12.496355],6);
         </script>
     </section>
     

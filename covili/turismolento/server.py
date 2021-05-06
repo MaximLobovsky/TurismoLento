@@ -53,9 +53,16 @@ def get_coordinate(listona):
         if ' ' in place.coordinate:
             single_coord = [float(place.coordinate.split()[0]), float(place.coordinate.split()[1])]
         else:
-            single_coord = 'no'
+            single_coord = [0, 0]
         coordinates.append(single_coord)
     return coordinates
+
+
+def get_descriptions(places):
+    descriptions = []
+    for place in places:
+        descriptions.append(place.descrizione.encode("utf-8"))
+    return descriptions
 
 
 @app.route('/')
@@ -70,7 +77,11 @@ def home():
 
 @app.route('/Map.html')
 def map_route():
-    return render_template('Map.html')
+    places = get_lista_localita()
+    coords = get_coordinate(places)
+    descriptions = get_descriptions(places)
+    index_list = range(len(places))
+    return render_template('Map.html', coords=coords, descs=descriptions, index_list=index_list)
 
 
 @app.route('/Gallery.html')

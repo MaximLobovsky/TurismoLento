@@ -1,6 +1,6 @@
 // JavaScript Document
 function CreateMap(){
-    var map = L.map("map").setView([0,0], -1);
+    let map = L.map("map").setView([41.902480, 12.496355], 6);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
     return map;
@@ -8,10 +8,9 @@ function CreateMap(){
 
 function PlaceMarker(map, N, E, description){
 	L.marker([N, E]).addTo(map)
-    .bindPopup(description)
-    .openPopup();
+    .bindPopup(description);
 };
 
-function setView(map, latitude, longitude, zoom){
-    map.setView([latitude, longitude], zoom);
+function setDefaultView(map){
+    map.setView([41.902480, 12.496355],6);
 }
