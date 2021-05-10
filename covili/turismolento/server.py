@@ -74,12 +74,12 @@ def get_sites(places):
 
 @app.route('/')
 def index():
-    # return render_template('Index.html')
-    places = get_lista_localita()
-    coords = get_coordinate(places)
-    descriptions = get_descriptions(places)
-    sites = get_sites(places)
-    return render_template('Map.html', coords=coords, descs=descriptions, sites=sites)
+    return render_template('Index.html')
+    # places = get_lista_localita()
+    # coords = get_coordinate(places)
+    # descriptions = get_descriptions(places)
+    # sites = get_sites(places)
+    # return render_template('Map.html', coords=coords, descs=descriptions, sites=sites)
 
 
 @app.route('/Home.html')
@@ -92,7 +92,8 @@ def map_route():
     places = get_lista_localita()
     coords = get_coordinate(places)
     descriptions = get_descriptions(places)
-    return render_template('Map.html', coords=coords, descs=descriptions)
+    sites = get_sites(places)
+    return render_template('Map.html', coords=coords, descs=descriptions, sites=sites)
 
 
 @app.route('/Gallery.html')
