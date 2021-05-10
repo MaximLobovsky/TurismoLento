@@ -9,7 +9,7 @@ function CreateMap(){
 function PlaceMarker(map, N, E, description, link = ''){
 	L.marker([N, E]).addTo(map)
         .bindPopup()
-	    .setPopupContent(description + '<br><a href=' + link.toString() + '>Visita il sito</a>');
+	    .setPopupContent(description + '<br><a href=' + link.toString() + ' target="_blank" rel="noopener noreferrer">Visita il sito</a>');
 
 };
 
