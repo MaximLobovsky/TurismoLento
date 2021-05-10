@@ -6,14 +6,26 @@ function CreateMap(){
     return map;
 };
 
-function PlaceMarker(map, N, E, description){
+function PlaceMarker(map, N, E, description, link = ''){
 	L.marker([N, E]).addTo(map)
-    .bindPopup(description);
+        .bindPopup()
+	    .setPopupContent(description + '<br><a href=' + link.toString() + '>Visita il sito</a>');
+
 };
 
 function setDefaultView(map){
     map.setView([41.902480, 12.496355],6);
 }
 
-
+function PlaceMarkers(map, places, descriptions, links){
+    let place;
+    let counter = 0;
+    for (place of coordinates){
+        if(place[0] != 0 && place[1] != 0) {
+            PlaceMarker(my_map, place[0], place[1], descriptions[counter], links[counter]);
+            counter += 1;
+        }
+    }
+    setDefaultView(map);
+}
 

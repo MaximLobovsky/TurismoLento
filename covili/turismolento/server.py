@@ -65,9 +65,21 @@ def get_descriptions(places):
     return descriptions
 
 
+def get_sites(places):
+    sites = []
+    for place in places:
+        sites.append(place.sito.encode("utf-8"))
+    return sites
+
+
 @app.route('/')
 def index():
-    return render_template('Map.html')
+    # return render_template('Index.html')
+    places = get_lista_localita()
+    coords = get_coordinate(places)
+    descriptions = get_descriptions(places)
+    sites = get_sites(places)
+    return render_template('Map.html', coords=coords, descs=descriptions, sites=sites)
 
 
 @app.route('/Home.html')
@@ -80,8 +92,7 @@ def map_route():
     places = get_lista_localita()
     coords = get_coordinate(places)
     descriptions = get_descriptions(places)
-    index_list = range(len(places))
-    return render_template('Map.html', coords=coords, descs=descriptions, index_list=index_list)
+    return render_template('Map.html', coords=coords, descs=descriptions)
 
 
 @app.route('/Gallery.html')

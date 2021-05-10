@@ -72,12 +72,18 @@
         <script>
             let my_map;
             let descriptions = [];
+            let links = [];
             {%for item in descs%}
                 {% set result = item.decode("utf-8")%}
                 descriptions.push("{{result}}")
             {% endfor %}
+            {%for link in sites%}
+                {%set single_site = link.decode("utf-8")%}
+                links.push("{{single_site}}")
+            {%endfor%}
             let coordinates = {{coords}};
             my_map = CreateMap();
+
             // let element;
             // let counter = 0;
             // for (element of coordinates){
@@ -87,7 +93,8 @@
             //     }
             // }
             // my_map.setView([41.902480, 12.496355],6);
-            PlaceMarkers(my_map, coordinates, descriptions);
+
+            PlaceMarkers(my_map, coordinates, descriptions, links);
         </script>
     </section>
     
