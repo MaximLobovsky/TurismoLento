@@ -14,3 +14,6 @@ function PlaceMarker(map, N, E, description){
 function setDefaultView(map){
     map.setView([41.902480, 12.496355],6);
 }
+
+
+

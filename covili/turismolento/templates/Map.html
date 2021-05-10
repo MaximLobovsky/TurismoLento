@@ -68,7 +68,7 @@
       </div></header>
     <section class="u-clearfix u-section-1" id="sec-531e">
       <div class = "u-clearfix u-sheet"><div id = "map"></div></div>
-        <script src="../static/place_marker.js"></script>
+        <script src="../static/utils.js"></script>
         <script>
             let my_map;
             let descriptions = [];
@@ -78,15 +78,16 @@
             {% endfor %}
             let coordinates = {{coords}};
             my_map = CreateMap();
-            let element;
-            let counter = 0;
-            for (element of coordinates){
-                if(element[0] != 0 && element[1] != 0) {
-                    PlaceMarker(my_map, element[0], element[1], descriptions[counter]);
-                    counter += 1;
-                }
-            }
-            my_map.setView([41.902480, 12.496355],6);
+            // let element;
+            // let counter = 0;
+            // for (element of coordinates){
+            //     if(element[0] != 0 && element[1] != 0) {
+            //         PlaceMarker(my_map, element[0], element[1], descriptions[counter]);
+            //         counter += 1;
+            //     }
+            // }
+            // my_map.setView([41.902480, 12.496355],6);
+            PlaceMarkers(my_map, coordinates, descriptions);
         </script>
     </section>
     
