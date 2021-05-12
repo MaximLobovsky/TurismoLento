@@ -43,7 +43,9 @@ def get_lista_localita():
 
 def get_nomi_regioni(listona):
     regioni = map(lambda l: l.regione, listona)
-    return set(regioni)
+    senza_duplicati_ma_disordinato = set(regioni)
+    ordinato = sorted(senza_duplicati_ma_disordinato)
+    return ordinato
 
 
 def get_coordinate(listona):
