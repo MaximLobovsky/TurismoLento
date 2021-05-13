@@ -42,7 +42,9 @@ def get_lista_localita():
 
 def get_nomi_regioni(listona):
     regioni = map(lambda l: l.regione, listona)
-    return set(regioni)
+    senza_duplicati_ma_disordinato = set(regioni)
+    ordinato = sorted(senza_duplicati_ma_disordinato)
+    return ordinato
 
 
 def get_coordinate(listona):
@@ -91,9 +93,10 @@ def home():
 def map_route():
     places = get_lista_localita()
     coords = get_coordinate(places)
+    regioni = get_nomi_regioni(places)
     descriptions = get_descriptions(places)
     sites = get_sites(places)
-    return render_template('Map.html', coords=coords, descs=descriptions, sites=sites)
+    return render_template('Map.html', coords=coords, descs=descriptions, sites=sites, data=places, regioni=regioni)
 
 
 @app.route('/Gallery.html')
