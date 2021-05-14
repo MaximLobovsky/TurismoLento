@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="../static/Map.css" media="screen">
     <script class="u-script" type="text/javascript" src="../static/jquery-1.9.1.min.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../static/nicepage.js" defer=""></script>
+      <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <link rel="icon" href="../static/favicon.ico">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -82,11 +83,11 @@
         <input type="text" id="barra-ricerca" onkeyup="ricerca('barra-ricerca', 'outer_list', coordinates, descriptions, links)" placeholder="Cerca un nome">
 
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="enable_regione_search" onchange="checkbox_toggle()">
+          <input class="form-check-input" type="checkbox" value="" id="enable_regione_search" onchange="checkbox_toggle(coordinates, descriptions, links)">
           <label class="form-check-label" for="enable_regione_search">
             Nella regione di:
 
-            <select class="form-select" id="elenco_regioni" aria-label="Default select example" style="display:none" onchange="discriminazione_regione()">
+            <select class="form-select" id="elenco_regioni" aria-label="Default select example" style="display:none" onclick="discriminazione_regione(coordinates, descriptions, links)">
               {% for regione in regioni %}
                 <option value="{{regione}}">{{regione}}</option>
               {% endfor %}
@@ -99,16 +100,8 @@
             {% for localita in data %}
                 <div class="single_list_item" 
                      id="single_list_item_{{localita.id}}"
-                     onmouseover="play_sound('sound_tiup_{{localita.id}}')"
-                     onmousedown="play_sound('sound_wew_{{localita.id}}')" 
                      data-regione={{localita.regione}}>
 
-                    <audio id="sound_tiup_{{localita.id}}">
-                        <source src="{{url_for('static', filename='tiup.mp3')}}" type="audio/mpeg">
-                    </audio>
-                    <audio id="sound_wew_{{localita.id}}">
-                        <source src="{{url_for('static', filename='wew.mp3')}}" type="audio/mpeg">
-                    </audio>
                     <a href="{{localita.sito}}" target="_blank">{{localita.nome}}</a>
 
                 </div>
@@ -143,7 +136,6 @@
       </div>
   </div>
     <!-- BARRA DI RICERCA FINE -->
-  
     
     
     <footer class="u-align-left u-clearfix u-footer u-grey-80 u-footer" id="sec-ec6f"><div class="u-clearfix u-sheet u-sheet-1"></div></footer>
