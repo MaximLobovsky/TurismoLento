@@ -76,10 +76,10 @@
 
     <!-- BARRA DI RICERCA INIZIO -->
     <div class="row" style="padding-left: 20px;">
-      <div class="col-sm-3" style="background-color: #BB7A5D; padding-top: 10px;" s>
+      <div class="col-sm-3" style="background-color: #BB7A5D; padding-top: 10px;"s s>
         Trova una località:
 
-        <input type="text" id="barra-ricerca" onkeyup="ricerca('barra-ricerca', 'outer_list')" placeholder="Cerca un nome">
+        <input type="text" id="barra-ricerca" onkeyup="ricerca('barra-ricerca', 'outer_list', coordinates, descriptions, links)" placeholder="Cerca un nome">
 
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="enable_regione_search" onchange="checkbox_toggle()">
@@ -136,16 +136,6 @@
                 {%endfor%}
                 let coordinates = {{coords}};
                 my_map = CreateMap();
-    
-                // let element;
-                // let counter = 0;
-                // for (element of coordinates){
-                //     if(element[0] != 0 && element[1] != 0) {
-                //         PlaceMarker(my_map, element[0], element[1], descriptions[counter]);
-                //         counter += 1;
-                //     }
-                // }
-                // my_map.setView([41.902480, 12.496355],6);
     
                 PlaceMarkers(my_map, coordinates, descriptions, links);
             </script>
