@@ -25,7 +25,6 @@ body
   flex-direction: column;
   background-color: rgb(255, 255, 255);
   color: white;
-  border: 2px solid black;
   width: 100%;
 }
 
@@ -35,7 +34,6 @@ body
   background-color: rgb(255, 255, 255);
   color: black;
   font-size: 14px;
-  border: 2px solid black;
   margin: 2px;
   padding: 20px;
   transition: width 1s linear,
