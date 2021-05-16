@@ -38,7 +38,7 @@
     <meta property="og:title" content="Map">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#bb7a5d">
-    <link rel="canonical" href="index.html">
+    <link rel="canonical" href="Index.html">
     <meta property="og:url" content="index.html">
   </head>
   <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-1697"><div class="u-clearfix u-sheet u-sheet-1">
@@ -80,14 +80,14 @@
       <div class="col-sm-3" style="background-color: #BB7A5D; padding-top: 10px;"s s>
         Trova una località:
 
-        <input type="text" id="barra-ricerca" onkeyup="ricerca('barra-ricerca', 'outer_list', coordinates, descriptions, links)" placeholder="Cerca un nome">
+        <input type="text" id="barra-ricerca" onkeyup="ricerca('barra-ricerca', 'outer_list', coordinates, descriptions, my_links)" placeholder="Cerca un nome">
 
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="enable_regione_search" onchange="checkbox_toggle(coordinates, descriptions, links)">
+          <input class="form-check-input" type="checkbox" value="" id="enable_regione_search" onchange="checkbox_toggle(coordinates, descriptions, my_links)">
           <label class="form-check-label" for="enable_regione_search">
             Nella regione di:
 
-            <select class="form-select" id="elenco_regioni" aria-label="Default select example" style="display:none" onclick="discriminazione_regione(coordinates, descriptions, links)">
+            <select class="form-select" id="elenco_regioni" aria-label="Default select example" style="display:none" onclick="discriminazione_regione(coordinates, descriptions, my_links)">
               {% for regione in regioni %}
                 <option value="{{regione}}">{{regione}}</option>
               {% endfor %}
@@ -118,19 +118,19 @@
             <script>
                 let my_map;
                 let descriptions = [];
-                let links = [];
+                let my_links = [];
                 {%for item in descs%}
                     {% set result = item.decode("utf-8")%}
                     descriptions.push("{{result}}")
                 {% endfor %}
                 {%for link in sites%}
                     {%set single_site = link.decode("utf-8")%}
-                    links.push("{{single_site}}")
+                    my_links.push("{{single_site}}")
                 {%endfor%}
                 let coordinates = {{coords}};
                 my_map = CreateMap();
     
-                PlaceMarkers(my_map, coordinates, descriptions, links);
+                PlaceMarkers(my_map, coordinates, descriptions, my_links);
             </script>
         </section>
       </div>
